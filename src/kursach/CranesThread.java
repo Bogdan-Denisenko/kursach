@@ -61,7 +61,7 @@ public class CranesThread extends Thread
                 }
                 statInfo[1] += delayTime[localShipIndex];
                 int j = localShipIndex;
-                while (date.getTime() > shipsInput.get(j).getDate().getTime())  // добавляем длину очереди
+                while (commonDate[threadNumber] > shipsInput.get(j).getDate().getTime())  // добавляем длину очереди
                 {
                     j++;
                     statistics.averageQueueLength += 1;
