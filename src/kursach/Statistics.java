@@ -2,15 +2,15 @@ package kursach;
 
 public class Statistics
 {
-    int unloadedShipsCount;
-    double averageQueueLength;
-    Time averageWaitingTime;
-    Time averageDelay;
-    Time maxDelay;
-    int finalFine;
-    int liquidCraneCount;
-    int looseCraneCount;
-    int containerCraneCount;
+    public int unloadedShipsCount;
+    public double averageQueueLength;
+    public Time averageWaitingTime;
+    public Time averageDelay;
+    public Time maxDelay;
+    public int finalFine;
+    public int liquidCraneCount;
+    public int looseCraneCount;
+    public int containerCraneCount;
     Statistics()
     {
         averageWaitingTime = new Time(0);

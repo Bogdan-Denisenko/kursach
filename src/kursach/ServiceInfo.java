@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class ServiceInfo
 {
-    String name;
-    Date comingTime;
-    Time waitingTime;
-    Date beginningUnloadingTime;
-    Time unloadingTime;
+    public String name;
+    public Date comingTime;
+    public Time waitingTime;
+    public Date beginningUnloadingTime;
+    public Time unloadingTime;
     ServiceInfo()
     {
         waitingTime = new Time(0);

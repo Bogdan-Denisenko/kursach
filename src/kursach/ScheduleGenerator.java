@@ -16,7 +16,7 @@ public class ScheduleGenerator
     }
     public void generateShips()
     {
-        count = 1000;
+        count = 300;
         for (int i = 0; i < count; i++)
         {
             Date date = new Date();

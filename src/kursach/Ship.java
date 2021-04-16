@@ -9,63 +9,76 @@ public class Ship
         LIQUID,
         CONTAINER
     }
-    private String name;
-    private Date date;
+    private final String name;
+    private final Date date;
     private int weight;
-    private cargoType cargo;
+    private final cargoType cargo;
     private int plannedTime;
-    Ship(String name_, Date date_, int weight_, cargoType cargo_)
+    Ship(String name, Date date, int weight, cargoType cargo)
     {
-        name = name_;
-        date = new Date();
-        date.setTime(date_.getTime());
-        weight = weight_;
-        cargo = cargo_;
+        this.name = name;
+        this.date = new Date();
+        this.date.setTime(date.getTime());
+        this.weight = weight;
+        this.cargo = cargo;
         switch(cargo){
             case LOOSE:
-                plannedTime = (int) Math.ceil(weight_ / Port.looseCraneSpeed);
+                plannedTime = (int) Math.ceil(weight / Port.looseCraneSpeed);
                 break;
             case LIQUID:
-                plannedTime = (int) Math.ceil(weight_ / Port.liquidCraneSpeed);
+                plannedTime = (int) Math.ceil(weight / Port.liquidCraneSpeed);
                 break;
             case CONTAINER:
-                plannedTime = (int) Math.ceil(weight_ / Port.containerCraneSpeed);
+                plannedTime = (int) Math.ceil(weight / Port.containerCraneSpeed);
                 break;
         }
     }
-
-    String getName()
+    Ship(Ship ship)
+    {
+        this.date = new Date();
+        this.name = ship.name;
+        this.date.setTime(ship.date.getTime());
+        this.weight = ship.weight;
+        this.cargo = ship.cargo;
+        this.plannedTime = ship.plannedTime;
+    }
+    public String getName()
     {
         return name;
     }
 
-    Date getDate()
+    public Date getDate()
     {
         return date;
     }
 
-    int getWeight()
+    public int getWeight()
     {
         return weight;
     }
 
-    cargoType getCargoType()
+    public cargoType getCargoType()
     {
         return cargo;
     }
 
-    int getPlannedTime()
+    public int getPlannedTime()
     {
         return plannedTime;
     }
 
-    void setDate(long time)
+    public void setDate(long time)
     {
         date.setTime(time);
     }
 
-    void setPlannedTime(int plannedTime_) // in minutes
+    public void setPlannedTime(int plannedTime) // in minutes
     {
-        plannedTime = plannedTime_;
+        this.plannedTime = plannedTime;
+    }
+
+    public void setWeight(int weight)
+    {
+        this.weight = weight;
     }
 }

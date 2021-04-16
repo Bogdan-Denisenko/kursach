@@ -1,5 +1,4 @@
 package kursach;
-
 import java.io.IOException;
 
 public class Main
